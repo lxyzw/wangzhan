@@ -1,0 +1,125 @@
+/*顶部广告图*/
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.banner .pic {
+    position: relative;
+    height: 100%;
+}
+.banner .pic li {
+    float: left;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*解决方案*/
+.banner_s {
+    position: relative;
+    height: 142px;
+
+}
+.banner_s .pic_s {
+    position: relative;
+    height: 100%;
+}
+.banner_s li {
+    margin-top: 44px;
+    margin-left: 514px;
+    float: left;
+    width: 182px;
+    height: 54px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*各个解决方案*/
+/*.little-banner{*/
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+/*}*/
+.little-banner li{
+    /*margin-right: 20px;*/
+    width: 370px;
+    height: 215px;
+    /*border: 1px solid red;*/
+    position: relative;
+    float: left;
+    /*border-bottom: 2px solid #f7faf9;*/
+    /*border-radius: 0 0 1px 1px;*/
+    /*box-shadow: 0px 1px 2px #c5c5c5;*/
+}
+.little-banner-one,.little-banner-two{
+    margin-right: 45px;
+}
+.little-banner-one,.little-banner-two,
+.little-banner-three{
+    margin-bottom: 45px;
+}
+.little-banner-four,.little-banner-five{
+    margin-right: 45px;
+}
+.little-banner-four,.little-banner-five,
+.little-banner-six{
+    margin-bottom: 45px;
+}
+/*.little-banner-two{*/
+    /*margin-right: 45px;*/
+/*}*/
+.little-banner-img{
+    position: relative;
+    width: 370px;
+    height: 120px;
+    /*border: 1px solid blue;*/
+    overflow: hidden;
+}
+.little-banner-gray{
+    position: absolute;
+    margin-top: -121px;
+    width: 370px;
+    height: 120px;
+    background: rgba(240,240,240,0.3);
+    display: none;
+}
+.little-banner-word p{
+    display: block;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    color: #333333;
+    margin:15px 0 9px 0;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #2EAFBB;
+}
+.little-banner-word span{
+    font-size: 12px;
+    font-family: "微软雅黑";
+    color: #747474;
+}
+/*鼠标经过图片改变样式*/
+.cur:hover img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+/*.cur .little-banner-img:hover {*/
+    /*cursor: url("../images/cases.png") 40 40, crosshair;*/
+/*}*/
+.cur a:hover {
+    cursor: url("../images/cases.png") 40 40, crosshair;
+}
+.little-banner-img {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+}
+.little-banner-img img {
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    line-height: 1em;
+}
+

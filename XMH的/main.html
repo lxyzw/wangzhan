@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="main.css"/>
+    <script src="jquery-1.12.4.js"></script>
+    <!--头部特效-->
+    <script>
+        /*头部二微码的鼠标点击事件*/
+        $(function () {
+            $(".ewm").mouseover(function () {
+                $(".ewm>img").css("transform", "skew(0deg)")
+
+//                $(".ewm>img").animate({
+//                    "transform":"skew(90deg)"
+//                })
+            })
+        })
+        $(function () {
+            $(".ewm").mouseout(function () {
+                $(".ewm>img").css("transform", "skew(90deg)")
+            })
+        })
+    </script>
+    <script>
+        /*点击头部的li让下标跟随他前进*/
+        $(function () {
+            $(".nav-btm>li").mouseenter(function () {
+                var index = $(this).index();
+                $(".nav-icon").animate({
+                    "left": 40 + 96 * index + "px"
+                }, 100)
+            })
+        })
+    </script>
+    <!--头部结束-->
+    <!--轮播图开始-->
+
+    <!--轮播图结束-->
+
+    <!--下方img的实现start-->
+    <script>
+        $(window).load(function () {
+            var scrollTop = $(window).scrollTop()
+            if (scrollTop > 50) {
+                $(".case .case-img").animate({
+                    top: 0
+                })
+            }
+
+        })
+    </script>
+    <!--下方img的实现end-->
+    <!--下方的li表的实现开始-->
+    <script>
+        /*li的排他*/
+        $(function () {
+            $(".caseli>.caseli-fix>li").mouseenter(function () {
+                $(this).addClass("sel")
+                        .siblings()
+                        .removeClass("sel")
+            })
+            $(".caseli>.caseli-fix>li").mouseleave(function () {
+                $(".caseli>.caseli-fix>li").removeClass("sel")
+                $(".caseli>.caseli-fix>li:eq(0)").addClass("sel")
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            $(".caseli .case-seek").click(function () {
+                $(".caseli .case-seek>input").animate({
+                    "width": "199px"
+                }, 1000)
+            })
+            $(".caseli .case-seek>input").click(function () {
+                $(".caseli .case-seek>input").removeAttr("value")
+            })
+            $(".caseli .case-seek").mouseleave(function () {
+                $(".caseli .case-seek>input").animate({
+                    "width": "0"
+                }, 1000)
+            })
+        })
+    </script>
+    <!--下方的li表的实现结束-->
+    <!--.allimg的start-->
+    <script>
+        $(function () {
+            $(".allImgtop").mouseenter(function () {
+                $(".allImgtop .projict").stop(true, true).animate({
+                    top: 0,
+                    left: 0
+                }, 300)
+            })
+            $(".allImgtop").mouseleave(function () {
+                $(".allImgtop .projict").animate({
+                    "top": "-120%",
+                    "left": "-120%"
+                })
+            })
+            $(".allImgbot").mouseenter(function () {
+                $(".allImgbot").css({
+                    "background": "rgba(75,205,217,1)"
+                })
+            })
+            $(".allImgbot").mouseleave(function () {
+                $(".allImgbot").css({
+                    "background": "rgba(75,205,217,0)"
+                })
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            $(".box li").mouseenter(function () {
+                $(this).children("p").stop(true, true).animate({
+                    "height": "40px",
+                }, 400);
+                $(this).children("div:even").stop(true, true).animate({
+                    "width": "100%",
+                }, 400).css("background", "#02b3bf");
+                $(this).children("div:odd").stop(true, true).animate({
+                    "height": "100%",
+                }, 400).css("background", "#02b3bf");
+            });
+
+            $(".box li").mouseleave(function () {
+                $(this).children("p").animate({
+                    "height": "0px"
+                });
+                $(this).children("div:even").animate({
+                    "width": "0%",
+                }, 500).css("background", "#02b3bf");
+                $(this).children("div:odd").animate({
+                    "height": "0%",
+                }, 500).css("background", "#02b3bf");
+
+            });
+        })
+    </script>
+    <script>
+        $(function () {
+            $(".allImg-two").mouseenter(function () {
+                $(".allImg-twobot h4").animate({
+                    left: 0
+                }, 1000)
+                $(".allImg-twobot a").show(200)
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            $(".allImgeetop").mouseenter(function () {
+                $(".allImgeetop img").css({
+                    opacity: 0.7
+                })
+                $(".Xleft").stop(true, true).animate({
+                    "height": "200px",
+                    "width": "2px"
+                }, 700).css("background", "#02b3bf")
+                $(".Xright").stop(true, true).animate({
+                    "height": "200px",
+                    "width": "2px"
+                }, 700).css("background", "#02b3bf")
+                $(".Xtop").stop(true, true).animate({
+                    "height": "2px",
+                    "width": "250px"
+                }, 700).css("background", "#02b3bf")
+                $(".Xbottom").stop(true, true).animate({
+                    "height": "2px",
+                    "width": "250px"
+                }, 700).css("background", "#02b3bf")
+                $(".Ximg").stop(true, true).animate({
+                    "left": "47%",
+
+                }, 900)
+            })
+            $(".allImgeetop").mouseleave(function () {
+                $(".allImgeetop img").css({
+                    opacity: 1
+                })
+                $(".Xleft").stop(true, true).animate({
+                    "height": "1px",
+                    "width": "1px"
+                }, 700).css("background", "#fff")
+                $(".Xright").stop(true, true).animate({
+                    "height": "1px",
+                    "width": "1px"
+                }, 700).css("background", "#fff")
+                $(".Xtop").stop(true, true).animate({
+                    "height": "1px",
+                    "width": "1px"
+                }, 700).css("background", "#fff")
+                $(".Xbottom").stop(true, true).animate({
+                    "height": "1px",
+                    "width": "1px"
+                }, 700).css("background", "#fff")
+                $(".Ximg").stop(true, true).animate({
+                    "left": "247%",
+                }, 100)
+            })
+
+
+        })
+    </script>
+    <!--.allimg的end-->
+    <!--手风情的东西start-->
+    <script>
+        $(function () {
+            $(".box1").mouseover(function () {
+                $(".box1").stop(true, true).animate({width: "500px", height: "471px"}, 200);
+                $(".box2").stop(true, true).animate({width: "335px", height: "228px", left: "515px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "335px", height: "228px", left: "865px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({
+                    width: "218px",
+                    height: "228px",
+                    left: "515px",
+                    top: "243px"
+                }, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "218px",
+                    height: "228px",
+                    left: "748px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "218px",
+                    height: "228px",
+                    left: "981px",
+                    top: "243px"
+                }, 200);
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                return false;
+            })
+            $(".box1").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:1
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+            })
+
+            $(".box2").mouseover(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "500px", height: "471px"}, 200);
+                $(".box3").stop(true, true).animate({width: "280px", height: "228px", left: "920px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "187px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "188px",
+                    height: "228px",
+                    left: "203px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "280px",
+                    height: "228px",
+                    left: "920px",
+                    top: "243px"
+                }, 200);
+                return false;
+
+            })
+            $(".box2").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:1
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+            })
+
+            $(".box3").mouseover(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box3").stop(true, true).animate({width: "500px", height: "471px", left: "700", top: "0px"}, 300);
+                $(".box1").stop(true, true).animate({width: "335px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "335px", height: "228px", left: "350px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "218px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "218px",
+                    height: "228px",
+                    left: "233px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "218px",
+                    height: "228px",
+                    left: "466px",
+                    top: "243px"
+                }, 200);
+                return false;
+
+            })
+            $(".box3").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:1
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+            })
+
+            $(".box4").mouseover(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box4").stop(true, true).animate({width: "500px", height: "471px", left: "0px", top: "0px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "335px",
+                    height: "228px",
+                    left: "515px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "335px",
+                    height: "228px",
+                    left: "865px",
+                    top: "243px"
+                }, 200);
+                $(".box1").stop(true, true).animate({width: "218px", height: "228px", left: "515px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "218px", height: "228px", left: "748px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "218px", height: "228px", left: "981px", top: "0px"}, 200);
+                return false;
+            })
+            $(".box4").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:1
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+            })
+
+            $(".box5").mouseover(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({width: "500px", height: "471px", left: "405px", top: "0px"}, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "280px",
+                    height: "228px",
+                    left: "920px",
+                    top: "243px"
+                }, 200);
+                $(".box1").stop(true, true).animate({width: "187px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "188px", height: "228px", left: "203px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "280px", height: "228px", left: "920px", top: "0px"}, 200);
+                return false;
+            })
+            $(".box5").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:1
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+            })
+
+            $(".box6").mouseover(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box6").stop(true, true).animate({width: "500px", height: "471px", left: "700", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "335px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "335px",
+                    height: "228px",
+                    left: "350px",
+                    top: "243px"
+                }, 200);
+                $(".box1").stop(true, true).animate({width: "218px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "218px", height: "228px", left: "233px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "218px", height: "228px", left: "466px", top: "0px"}, 200);
+                return false;
+
+
+            })
+            $(".box6").mouseout(function () {
+                $(this).css({
+                    opacity:1
+                })
+                $(this).siblings().css({
+                    opacity:0.4
+                })
+                $(".box1").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "0px"}, 200);
+                $(".box2").stop(true, true).animate({width: "390px", height: "228px", left: "405px", top: "0px"}, 200);
+                $(".box3").stop(true, true).animate({width: "390px", height: "228px", left: "810px", top: "0px"}, 200);
+                $(".box4").stop(true, true).animate({width: "390px", height: "228px", left: "0px", top: "243px"}, 200);
+                $(".box5").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "405px",
+                    top: "243px"
+                }, 200);
+                $(".box6").stop(true, true).animate({
+                    width: "390px",
+                    height: "228px",
+                    left: "810px",
+                    top: "243px"
+                }, 200);
+
+            })
+
+        })
+    </script>
+    <!--手风情的东西end-->
+    <!--一起来看流星雨start-->
+    <script>
+        $(function () {
+            var width = $(".casebox").height();
+            setInterval(function () {
+                var left = $(".casebox").width();
+                var sleft = Math.random() * left;
+                var opac = 0.3 + Math.random();
+                var fon = 10 + Math.random() * 10;
+                var lX = sleft + 600 * Math.random();
+                var kHeight = 10000 * Math.random();
+                var text;
+                switch (Math.floor(Math.random() * 4 + 1)) {
+                    case 1:
+                        text = "<div class='snow'>☆<div>";
+                        break;
+                    case 2:
+                        text = "<div class='snow'>You❤Me<div>";
+                        break;
+                    case 3:
+                        text = "<div class='snow'>❅<div>";
+                        break;
+                    case 4:
+                        text = "<div class='snow'>の<div>";
+                        break;
+                }
+                $(text).clone().appendTo(".casebox").css({
+                    left: sleft + "px",
+                    opacity: opac,
+                    "font-size": fon,
+                }).animate({
+                    top: (width * 2) + "px",
+                    left: lX + "px",
+                }, kHeight, "linear", function () {
+                    $(this).remove()
+                })
+            }, 25)
+        })
+    </script>
+    <!--一起来看流星雨end-->
+    <!--图片的部分start-->
+
+    <!--图片的部分end-->
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                console.log(scrollTop);
+                if (scrollTop > 700) {
+                    $(".caseHui-tex h4").animate({
+                        "left": 0
+                    }, 200)
+                    $(".caseHui-one").animate({
+                        top: 70
+                    })
+                }
+                if(scrollTop>1470){
+                    $(".XImg20").animate({
+                        top:0,
+                        left:260
+                    },200)
+                    $(".XImg1").animate({
+                        top:60,
+                        left:20
+                    },400)
+                    $(".XImg2").animate({
+                        top:60,
+                        left:100
+                    },600)
+                    $(".XImg3").animate({
+                        top:60,
+                        left:180
+                    },800)
+                    $(".XImg4").animate({
+                        top:60,
+                        left:260
+                    },1000)
+                    $(".XImg5").animate({
+                        top:60,
+                        left:340
+                    },1200)
+                    $(".XImg6").animate({
+                        top:60,
+                        left:420
+                    },1400)
+                    $(".XImg7").animate({
+                        top:120,
+                        left:260
+                    },1600)
+                    $(".XImg8").animate({
+                        top:180,
+                        left:180
+                    },1800)
+                    $(".XImg9").animate({
+                        top:180,
+                        left:340
+                    },2000)
+                    $(".XImg10").animate({
+                        top:240,
+                        left:100
+                    },2100)
+                    $(".XImg11").animate({
+                        top:240,
+                        left:420
+                    },2400)
+
+                }
+            })
+        })
+
+    </script>
+    <!--<script src="../js/base.js" type="text/javascript"></script>-->
+
+</head>
+<body>
+<!--.header 头部的部分-->
+<div class="header w .clearfix">
+    <div class="header-top fr">
+        <span class="call"></span>
+        <span class="call_tel">400-800-9385</span>
+        <a>
+            <span class="email"></span>
+            "service@szfangwei.cn
+        </a>
+        <a class="ewm">
+            <span class="weixin"></span>
+            方维网站建设
+            <img src="images/contact_weixin.jpg" alt="方维微信"/>
+        </a>
+    </div>
+    <div class="header-bottom">
+        <div class="header-bottom-left">
+            <a href="/" class="fl">
+                <img src="images/logo.jpg" alt=""/>
+            </a>
+            <a href="" class="fl logo_text">
+                <img src="images/logo_text.jpg" alt="" class="logo_text-one"/>
+            </a>
+        </div>
+        <div class="header-bottom-right">
+            <div class="header-bottom-nav fr">
+                <ul class="nav-btm">
+                    <li id="nav1">
+                        <a href="../home/index.html">方维首页</a>
+                    </li>
+                    <li id="nav2">
+                        <a href="../about-wj/Index.html">关于我们</a>
+                    </li>
+                    <li id="nav3">
+                        <a href="../XMH的/main.html">成功案例</a>
+                    </li>
+                    <li id="nav4">
+                        <a href="../service/service.html">服务范围</a>
+                    </li>
+                    <li id="nav5">
+                        <a href="../ljq/index.html">移动终端</a>
+                    </li>
+                    <li id="nav6">
+                        <a href="../my/my.html">解决方案</a>
+                    </li>
+                    <li id="nav7">
+                        <a href="../news/Index.html">新闻资讯</a>
+                    </li>
+                    <li id="nav8">
+                        <a href="../contact/index.html">联系我们</a>
+                    </li>
+                </ul>
+                <span class="nav-icon" style="left:40px; width:56px;"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--.header 头部结束-->
+
+<!--#carousel1轮播图开始的实现，开始的部分-->
+<div class="lunbo ">
+    <img src="images/banner_case.jpg" alt="">
+</div>
+<!--#carousel1轮播图开始的结束-->
+
+<!--下方case的开始-->
+<div class="case w clearfix">
+    <div class="case-img">
+        <img class="case-img-one" src="images/case_r.jpg" alt=""/>
+        <img class="case-img-two" src="images/case_t.jpg" alt=""/>
+    </div>
+    <span>案例</span>
+
+    <div class="case-line"></div>
+</div>
+<!--下方case的结束-->
+
+<!--下方的caselili表的实现开始-->
+<div class="caseli w clearfix">
+    <ul class="caseli-fix">
+        <li class="sel">ALL</li>
+        <li>手机网站</li>
+        <li>企业案例</li>
+        <li>外贸案例</li>
+        <li>购物商城</li>
+        <li>旅游案例</li>
+    </ul>
+    <div class="case-search">
+        <div class="case-seek">
+            <input type="text" value="搜索吧少年"/>
+            <img src="images/c03.jpg" alt="搜索网站案例" width="16" height="16"/>
+        </div>
+    </div>
+</div>
+<!--下方的caselili表的实现结束-->
+
+<!--allimg图片的地方start开始-->
+<div class="allImg w">
+    <div class="allImg-box">
+        <div class="allImgtop">
+            <a href="">
+                <img src="images/x10.jpg" alt=""/>
+            </a>
+
+            <div class="projict">
+                五组颜值最高
+            </div>
+        </div>
+        <div class="allImgbot">
+            <h4 class="fl">云罐-同方股份</h4>
+
+            <div class="fr">
+                <a href="" class="case-pc"></a>
+                <a href="" class="case-tel"></a>
+            </div>
+            <div class="callImg"></div>
+        </div>
+    </div>
+    <div class="allImg-two">
+        <div class="box">
+            <ul>
+                <li>
+                    <div class="top"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                    <div class="right"></div>
+                    <img src="images/x19.jpg" alt="">
+
+                    <p>五组最棒!</p>
+                </li>
+            </ul>
+        </div>
+        <div class="allImg-twobot">
+            <h4 class="fl">专业的化妆</h4>
+
+            <div class="fr">
+                <a href="" class="case-pc"></a>
+                <a href="" class="case-tel"></a>
+            </div>
+            <div class="callImg"></div>
+        </div>
+    </div>
+    <div class="allImg-three">
+        <div class="allImgeetop">
+            <a href=""><img src="images/x9.jpg" alt=""/></a>
+
+            <div class="allImgee-top">
+                <ul>
+                    <li class="Xleft"></li>
+                    <li class="Xtop"></li>
+                    <li class="Xright"></li>
+                    <li class="Xbottom"></li>
+                    <li class="Ximg"><img src="images/sl_icon.png" alt=""/></li>
+                </ul>
+            </div>
+        </div>
+        <div class="allImgeebot">
+            <h4 class="fl">钻石-永恒</h4>
+
+            <div class="fr">
+                <a href="" class="case-pc"></a>
+                <a href="" class="case-tel"></a>
+            </div>
+            <div class="callImg"></div>
+        </div>
+    </div>
+</div>
+<!--图片的地方end结束-->
+
+<!--婚礼的scroll滑动start-->
+<div class="caseHui w">
+    <div class="caseHui-tex">
+        <h4>婚礼的策划</h4>
+    </div>
+    <div class="caseHui-one">
+        <a href=""><img src="images/xmh.jpg" alt="" width="690px" height="216px"/></a>
+    </div>
+</div>
+<!--婚礼的scroll滑动end-->
+
+<!--手风情的东西start-->
+<div class="lest w">
+    <div class="box1">
+        <a href=""><img src="images/ming1%20(4).jpg" alt=""/></a>
+    </div>
+    <div class="box2">
+        <a href=""><img src="images/ming1%20(1).jpg" alt=""/></a>
+    </div>
+    <div class="box3">
+        <a href=""><img src="images/ming1%20(2).jpg" alt=""/></a>
+    </div>
+    <div class="box4">
+        <a href=""><img src="images/ming1%20(6).jpg" alt=""/></a>
+    </div>
+    <div class="box5">
+        <a href=""><img src="images/ming1%20(5).jpg" alt=""/></a>
+    </div>
+    <div class="box6">
+        <a href="/"><img src="images/ming1%20(3).jpg" alt=""/></a>
+    </div>
+</div>
+<!--手风情的东西end-->
+
+<!--一起来看流星雨start-->
+<div class="casesunny w">
+    <h4>一起来看流星雨</h4>
+</div>
+<div class="onee w">
+    <div class="casebox ">
+    </div>
+    <div class="caseboxR">
+        <img src="images/x20.jpg" alt="" class="XImg20">
+        <img src="images/x1.jpg" alt="" class="XImg1">
+        <img src="images/x2.jpg" alt="" class="XImg2">
+        <img src="images/x3.jpg" alt="" class="XImg3">
+        <img src="images/x4.jpg" alt="" class="XImg4">
+        <img src="images/x5.jpg" alt="" class="XImg5">
+        <img src="images/x6.jpg" alt="" class="XImg6">
+        <img src="images/x7.jpg" alt="" class="XImg7">
+        <img src="images/x8.jpg" alt="" class="XImg8">
+        <img src="images/x9.jpg" alt="" class="XImg9">
+        <img src="images/x10.jpg" alt="" class="XImg10">
+        <img src="images/x11.jpg" alt="" class="XImg11">
+    </div>
+
+</div>
+<!--一起来看流星雨end-->
+
+<!--allimg尾部的部分开始-->
+<footer class="footer">
+    <div class="contact">
+        <div class="wrap">
+            <div class="home_about fl">
+                <dl>
+                    <dt>
+                        <a href="">关于我们</a>
+                    </dt>
+                    <dd>方维网络专注于网站定制，始终追求“用最快的速度定制出最好的网站
+                        ”。懂您所需、做您所想！我们一直在思考如何为客户创造更大的价值
+                        ，让客户更省心!
+                    </dd>
+                    <dd>
+                        <a href="" class="more">查看更多 &gt;&gt;</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="home_case fl">
+                <h2><a href="">最新案例</a></h2>
+                <ul>
+                    <li>
+                        <a href="" target="_blank">
+                            <img src="images/579330314e94a.jpg" alt="深圳市弘达财富管理有限公司" height="52" width="80">
+                        </a>
+                        <h5>
+                            <a href="" target="_blank">深圳市弘达财富管理有限公司</a>
+                        </h5>
+
+                        <p class="text">
+                            <a href="" target="_blank"> 深圳市弘达财富管理有限...</a>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <img src="images/57932a8c76122.jpg" alt="深圳市承圆财务代理有限公司" height="52" width="80">
+                        </a>
+                        <h5>
+                            <a href="" target="_blank">深圳市承圆财务代理有限公司</a>
+                        </h5>
+
+                        <p class="text">
+                            <a href="" target="_blank">深圳市承圆财务代理有限公司...</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="home_service fl">
+                <h2>
+                    <a href="">服务范围</a>
+                </h2>
+                <a class="sub" href="">品牌官网设计</a>
+                <a class="sub" href="">商城网站建设</a>
+                <a class="sub" href="">手机网站建设</a>
+                <a class="sub" href="">微信网站建设</a>
+                <a class="sub" href="">其他网站定制</a>
+            </div>
+            <div class="home_contact fl">
+                <h2>
+                    <a href="">联系我们</a>
+                </h2>
+                <ul>
+                    <li>
+                        <i class="addres"></i>
+                        地 址：深圳市福田区车公庙苍松大厦南座910
+                    </li>
+                    <li>
+                        <i class="weibo"></i>
+                        Q Q：
+                        <a target="_blank" rel="nofollow" href="">97798816</a>
+                    </li>
+                    <li>
+                        <i class="email"></i>
+                        邮 箱：
+                        <a target="_blank" rel="nofollow" href="">
+                            service@szfangwei.cn</a>
+                    </li>
+                    <li>
+                        <i class="call"></i>
+                        电 话：0755-82689595
+                    </li>
+                    <li>
+                        <i class="weixin"></i><a href="">
+                        付款方式
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="blogroll">
+        <div class="wrap">
+            <p class="copyright">
+                @2016-2017 版权所有 深圳方维网络科技有限公司 粤ICP备12071064号-2</p>
+        </div>
+    </div>
+</footer>
+<!--尾部的部分结束1-->
+
+</body>
+</html>

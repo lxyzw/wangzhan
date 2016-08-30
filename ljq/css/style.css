@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.beijing {
+    /*height: 628px;*/
+    /*width: 1318px;*/
+    /*background: url("../image/light_banner1.jpg") no-repeat center;*/
+    position: relative;
+}
+.computer {
+    position: absolute;
+    left: 150px;
+    top:0;
+}
+.computer img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#tp1,#tp2,#tp3,#tp4,#tp5 {
+    left: 130px;
+    top: 35px;
+    display: none;
+    /*height: 0;*/
+}
+
+
+
+
+
+#banner {
+    width: 1349px;
+    height: 628px;
+    background: url("../image/m_banner.jpg") no-repeat center;
+}
+
+.hide {
+    display: none
+}
+.mytel-top {
+
+}
+.mytel-top,.mywx-top {
+    text-align: center;
+    margin-top: 10px;
+}
+.mytel-down-left,.mytel-down-center,.mytel-down-right {
+    float: left;
+    width: 380px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.mytel-down-left h3,.mytel-down-center h3,.mytel-down-right h3{
+    font-size: 16px;
+    color: #222;
+    margin: 10px auto;
+    line-height: 26px;
+}
+
+#mywx{
+    background: url("../image/m06.jpg") no-repeat center top;
+    height: 786px;
+    position: relative;
+}
+#mywx .mywx-left {
+    position: absolute;
+    left: 130px;
+    top: 200px;
+}
+#mywx .mywx-left h2{
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+#mywx .mywx-left p {
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+}
+#mywx .mywx-right {
+    position: absolute;
+    right: -540px;
+    bottom: -640px;
+}
+.tp {
+    background: url("../image/m08.jpg") no-repeat center;
+    height: 480px;
+    margin-top: 20px;
+}
